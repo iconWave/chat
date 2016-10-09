@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form novalidate="novalidate" name="userform" ng-submit="login()" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="email">邮箱</label>
+                <div class="col-xs-3">
+                    <input name="email" ng-model="email" ng-required="true" id="email" type="email" class="form-control">
+                    <div class="help-block" ng-show="userform.email.$dirty && userform.email.$invalid">
+                        <div ng-show="userform.email.$error.required" class="alert alert-danger">邮箱必填</div>
+                        <div ng-show="userform.email.$error.email" class="alert alert-danger">邮箱格式不合法</div>
+                    </div>
+                </div>
+                <div class="col-xs-1">
+                    <button ng-disabled="userform.$pristine || (userform.$dirty&& userform.$invalid)||userform.$submitted"  type="submit" class="btn btn-primary">登录</button>
+                </div>
+            </div>
+        </form>
+        {{$rootScope}}
+    </div>
+</div>

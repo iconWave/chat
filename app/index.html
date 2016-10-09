@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatMod">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰聊天室</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">珠峰聊天室</div>
+            </div>
+            <div>
+                <ul ng-show="user" class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="">
+                            <img class="img-rounded" style="width:32px;height:32px;" ng-src="{{user.avatar}}" alt="">
+                            {{user.email}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div ng-if="errorMsg" class="alert alert-danger">
+        {{errorMsg}}
+    </div>
+    <div class="container" ng-view>
+
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="controllers/LoginCtrl.js"></script>
+<script src="controllers/RoomsCtrl.js"></script>
+<script src="controllers/RoomCtrl.js"></script>
+</body>
+</html>

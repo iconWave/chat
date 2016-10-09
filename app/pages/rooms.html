@@ -1,0 +1,24 @@
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <input ng-change="filter()" ng-model="keyword" type="text" class="form-control">
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-3" ng-repeat="room in rooms track by $index">
+                <div ng-click="gogogo(room._id)" class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="text-center">{{room.name}}</h3>
+                    </div>
+                    <div class="panel-footer">
+                        <h3>在线人数:{{room.users.length||0}}人</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-footer" >
+        <button ng-click="createRoom()" ng-show="!rooms.length" class="btn btn-primary">新建房间</button>
+    </div>
+</div>
